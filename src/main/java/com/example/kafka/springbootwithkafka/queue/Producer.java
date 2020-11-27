@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class Producer {
 
     @Value("${kafka.topic}")
-    private static String TOPIC;
+    private String TOPIC;
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;

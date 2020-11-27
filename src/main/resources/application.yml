@@ -16,3 +16,4 @@ spring:
 
 kafka:
   topic: users
+  dlt: DLT
