@@ -10,8 +10,7 @@ zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties & kafka-server-
 <br/><br/><hr/>
 Start up the application <br/>
 ##### Testing string message: 
-<br/>
 curl -X POST -F 'message=first-message' http://localhost:9000/kafka/publish
 
-##### Testing JSON message: <br/>
+##### Testing JSON message:
 curl -X POST http://localhost:9000/kafka/publish/NEW
