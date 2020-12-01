@@ -1,25 +1,27 @@
 package com.example.kafka.springbootwithkafka.controller;
 
-import com.example.kafka.springbootwithkafka.queue.Producer;
+import com.example.kafka.springbootwithkafka.DTO.Transaction;
+import com.example.kafka.springbootwithkafka.service.KafkaProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.Instant;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/kafka")
 public class KafkaController {
 
-    private final Producer producer;
-
     @Autowired
-    KafkaController(Producer producer) {
-        this.producer = producer;
-    }
+    private KafkaProducerService service;
 
     @PostMapping(value = "/publish")
     public void sendMessageToKafkaTopic(@RequestParam("message") String message) {
-        this.producer.sendMessage(message);
+        this.service.sendMessage(message);
+    }
+
+    @PostMapping("/publish/{transaction}")
+    public void sendTransaction(@PathVariable("transaction") String transaction) {
+        this.service.saveCreateTransactionLog(new Transaction(UUID.randomUUID(), transaction, Instant.now()));
     }
 }
