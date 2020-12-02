@@ -1,6 +1,6 @@
 package com.example.kafka.springbootwithkafka.controller;
 
-import com.example.kafka.springbootwithkafka.DTO.Transaction;
+import com.example.kafka.springbootwithkafka.dto.Transaction;
 import com.example.kafka.springbootwithkafka.service.KafkaProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

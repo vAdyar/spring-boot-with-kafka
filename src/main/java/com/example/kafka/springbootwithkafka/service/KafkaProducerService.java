@@ -1,6 +1,6 @@
 package com.example.kafka.springbootwithkafka.service;
 
-import com.example.kafka.springbootwithkafka.DTO.Transaction;
+import com.example.kafka.springbootwithkafka.dto.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

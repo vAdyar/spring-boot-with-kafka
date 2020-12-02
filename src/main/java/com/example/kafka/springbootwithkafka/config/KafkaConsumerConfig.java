@@ -3,7 +3,7 @@ package com.example.kafka.springbootwithkafka.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.kafka.springbootwithkafka.DTO.Transaction;
+import com.example.kafka.springbootwithkafka.dto.Transaction;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
